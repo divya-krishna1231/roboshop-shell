@@ -27,26 +27,26 @@ then
 else
      echo "yoy are root user"
 fi
-dnf module disable nodejs -y 
-VALIDATE $? "Disabling current NodeJS" &>> $LOGFILE
-dnf module enable nodejs:18 -y 
-VALIDATE $? "Enabling NodeJS:18 " &>> $LOGFILE
-dnf install nodejs -y
-VALIDATE $? "Imstalling NodeJS:18 " &>> $LOGFILE
+dnf module disable nodejs -y  &>> $LOGFILE
+VALIDATE $? "Disabling current NodeJS" 
+dnf module enable nodejs:18 -y   &>> $LOGFILE
+VALIDATE $? "Enabling NodeJS:18 " 
+dnf install nodejs -y &>> $LOGFILE
+VALIDATE $? "Imstalling NodeJS:18 " 
 useradd roboshop
-VALIDATE $? "creating roboshop user " &>> $LOGFILE
+VALIDATE $? "creating roboshop user " 
 mkdir /app
-VALIDATE $? "creating app directory " &>> $LOGFILE
+VALIDATE $? "creating app directory " 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
  
-VALIDATE $? "Downloading catalogue application " &>> $LOGFILE
+VALIDATE $? "Downloading catalogue application "
 cd /app 
-unzip /tmp/catalogue.zip
+unzip /tmp/catalogue.zip &>> $LOGFILE
 VALIDATE $? "unzipping catalogue"
 npm install 
 VALIDATE $? "Installing dependencies " 
 cp  /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
-VALIDATE $? "Copying catalogue service file " &>> $LOGFILE
+VALIDATE $? "Copying catalogue service file " 
 systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? "catalogue daemon reload"
 systemctl enable catalogue &>> $LOGFILE
