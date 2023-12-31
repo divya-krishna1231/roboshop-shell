@@ -32,7 +32,7 @@ VALIDATE $? "Disabling current NodeJS"
 dnf module enable nodejs:18 -y   &>> $LOGFILE
 VALIDATE $? "Enabling NodeJS:18 " 
 dnf install nodejs -y &>> $LOGFILE
-VALIDATE $? "Imstalling NodeJS:18 " 
+VALIDATE $? "Installing NodeJS:18 " 
 useradd roboshop
 VALIDATE $? "creating roboshop user " 
 mkdir /app
