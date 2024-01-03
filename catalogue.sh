@@ -4,7 +4,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33mm"
 N="\e[0m"
-MONGODB_HOST=172.31.22.159
+MONGODB_HOST=172.31.44.44
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
