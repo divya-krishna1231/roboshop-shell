@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AMI=ami-0b4f379183e5706b9 #this keeps on changing
-SG_ID=sg-025cd373daf93184e #replace with your SG ID
+SG_ID= #replace with your SG ID
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 ZONE_ID=Z04741653E8XIJ2OQJ8XE # replace your zone ID
 DOMAIN_NAME="devopsrd.online"
